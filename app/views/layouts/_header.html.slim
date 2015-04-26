@@ -16,6 +16,10 @@ header
 
 div class = "signup_login_header_button"
   ul class = "signup"
-    li SIGNUP or LOGIN          
+    - if current_user
+      li= link_to "Logout", logout_path
+    - else
+      li= link_to "Register", new_user_path
+      li= link_to "Login", login_path     
 
 div class = "red_line"
